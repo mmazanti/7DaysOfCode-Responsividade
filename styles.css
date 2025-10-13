@@ -1,0 +1,17 @@
+@import url('./style/cabecalho.css');
+@import url('./style/main.css');
+
+:root {
+    --fonte: 'Montserrat', sans-serif;
+    --fundo-branco: #FFFFFF;
+    --cor-de-fundo: #F8F6FC;
+    --cor-texto-principal: #464646;
+    --cor-texto-secundaria: #A3A3A3;
+    --cor-fundo-botão-vídeo: #FFB050;
+    --cor-fundo-botão-endereço: #4894FF;
+}
+
+html {
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte);
+}
