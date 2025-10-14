@@ -45,3 +45,10 @@ body {
 .rodapé-ações__item:first-child a {
     color: #007bff;
 }
+
+@media screen and (min-width: 768px) {
+    .rodapé-ações {
+        justify-content: center;
+        gap: 2.5em;
+    }
+}

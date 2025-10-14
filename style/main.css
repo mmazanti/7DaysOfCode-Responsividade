@@ -199,7 +199,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2em 1.5em;
-        margin-bottom: 2em;
+        margin: 0 2em 2em 0;
     }
 
     .agenda h2 {
@@ -225,5 +225,31 @@
         text-align: center;
         padding: 0.75em 0;
         height: auto;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .agenda {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2em 2em;
+    }
+
+    .agenda h2 {
+        grid-column: 1/ span 3;
+        margin-top: 2em;
+        margin-bottom: 1em;
+    }
+    
+    footer {
+        display: none;
+    }
+
+    .fab-container {
+        right: 60px;
+        bottom: 60px;
+    }
+
+    .card_consultas__contato-botão {
+        gap: 1em;
     }
 }
