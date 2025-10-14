@@ -50,3 +50,13 @@
     color: var(--cor-texto-secundaria);
     padding-top: 1em;
 }
+
+@media screen and (min-width: 768px) {
+    .cabecalho__barra_superior {
+        display: none;
+    }
+
+    .cabecalho__perfil {
+        margin-left: 1em;
+    }
+}

@@ -4,6 +4,10 @@
     padding: 0.5em 0 0.5em 1em;
 }
 
+.agenda h2 {
+    margin-bottom: 1em;
+}
+
 .card_consultas {
     margin: 0 1em 1em 1em;
     background-color: var(--fundo-branco);
@@ -184,4 +188,42 @@
     opacity: 1;
     pointer-events: auto;
     transform: translate(0);
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        margin: 1em 2em;
+    }
+
+    .agenda {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2em 1.5em;
+        margin-bottom: 2em;
+    }
+
+    .agenda h2 {
+        grid-column: 1/ span 2;
+        margin-bottom: 0;
+    }
+
+    .card_consultas {
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .card_consultas__contato-botão {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5em;
+    }
+
+    .card_consultas__contato-botão--vídeo,
+    .card_consultas__contato-botão--áudio,
+    .card_consultas__contato-botão--endereço {
+        flex: 1;
+        text-align: center;
+        padding: 0.75em 0;
+        height: auto;
+    }
 }
