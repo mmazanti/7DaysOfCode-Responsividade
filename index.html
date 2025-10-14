@@ -296,9 +296,50 @@
             </div>
         </section>
 
+    <div class="fab-container">
+        <a href="#" class="fab-option fab-option--local">
+            <span class="fab-label">Nova consulta na casa do paciente</span>
+            <img src="./assets/pinfabiconee.svg" alt="Ícone de câmera">
+        </a>
+        <a href="#" class="fab-option fab-option--local">
+            <span class="fab-label">Nova consulta por vídeo</span>
+            <img src="./assets/Camerafab.svg" alt="Ícone de câmera">
+        </a>
+
+        <button class="fab-main" id="fab-main-button">
+            <img src="./assets/maisicone.svg" alt="Ícone de adcionar">
+        </button>
+    </div> 
+
     </main>
     <footer>
-        
+        <ul class="rodapé-ações">
+            <li class="rodapé-ações__item">
+                <a href="#"><img src="./assets/Calendarioicone.svg" alt="Icone consultas">Consultas</a>
+            </li>
+            <li class="rodapé-ações__item">
+                <a href="#"><img src="./assets/clientes icone.svg" alt="Icone clientes">Clientes</a>
+            </li>
+            <li class="rodapé-ações__item">
+                <a href="#"><img src="./assets/relatorios icone.svg" alt="Icone relatórios">Relatórios</a>
+            </li>
+            <li class="rodapé-ações__item">
+                <a href="#"><img src="./assets/menu icone.svg" alt="Icone menu">Menu</a>
+            </li>
+        </ul>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const fabContainer = document.querySelector('.fab-container');
+        const fabMainButton = document.getElementById('fab-main-button');
+
+        fabMainButton.addEventListener('click', () => {
+            // Alterna a classe 'open' no container. 
+            // O CSS cuida de mostrar/esconder as opções.
+            fabContainer.classList.toggle('open');
+        });
+    });
+</script>
 </body>
 </html>
