@@ -1,5 +1,5 @@
 .agenda {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0.5em 0 0.5em 1em;
 }
@@ -12,6 +12,10 @@
     margin: 0 1em 1em 1em;
     background-color: var(--fundo-branco);
     border-radius: 8px;
+}
+
+.formulario_consulta {
+    display: none;
 }
 
 .card_consultas__perfil {
@@ -42,13 +46,13 @@
 }
 
 .card_consultas__perfil-informações--nome {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 700;
     color: var(--cor-texto-principal);
 }
 
 .card_consultas__perfil-informações--local {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
     color: var(--cor-texto-secundaria);
     padding-top: 0.5em;
@@ -82,16 +86,27 @@
 }
 
 .card_consultas__contato-horário {
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 500;
     color: var(--cor-texto-principal);
 }
 
 .card_consultas__contato-botão {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     margin-top: 2em;
     margin-bottom: 1em;
+}
+
+.card_consultas__contato-botão--vídeo,
+.card_consultas__contato-botão--áudio,
+.card_consultas__contato-botão--endereço {
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card_consultas__contato-botão--vídeo {
@@ -99,25 +114,50 @@
     border-radius: 8px;
     background-color: var(--cor-fundo-botão-vídeo);
     color: var(--fundo-branco);
+    border: none;
     text-decoration: none;
+}
+
+.card_consultas__contato-botão--vídeo:hover,
+.card_consultas__contato-botão--vídeo:focus {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card_consultas__contato-botão--áudio {
     padding: 1em;
     border-radius: 8px;
+    background-color: transparent;
     border: 1px solid var(--cor-texto-principal);
     color: var(--cor-texto-principal);
     text-decoration: none;
 }
 
+.card_consultas__contato-botão--áudio:hover,
+.card_consultas__contato-botão--áudio:focus {
+    background-color: var(--cor-texto-principal);
+    color: var(--fundo-branco);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .card_consultas__contato-botão--endereço {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     padding: 1em 6.5em;
     border-radius: 8px;
+    border: none;
     background-color: var(--cor-fundo-botão-endereço);
     text-decoration: none;
     color: var(--fundo-branco);
+}
+
+.card_consultas__contato-botão--endereço:hover,
+.card_consultas__contato-botão--endereço:focus {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .fab-container {
@@ -143,8 +183,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 3em;
+}
+
+.fab-main:hover,
+.fab-main:focus {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    outline: none;
 }
 
 .fab-main img {
@@ -161,6 +208,13 @@
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
     transform: translate(10px);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.fab-option:hover {
+    transform: scale(1.02);
 }
 
 .fab-label {
@@ -169,7 +223,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     color: var(--cor-texto-descrição);
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 500;
     margin-right: 10px;
     order: -1;
@@ -266,11 +320,94 @@
     }
 
     .fab-container {
-        right: 60px;
-        bottom: 60px;
+        display: none;
     }
 
     .card_consultas__contato-botão {
         gap: 1em;
+    }
+
+    /* Formulário visível apenas no Desktop */
+    .formulario_consulta {
+        display: block;
+        background-color: var(--fundo-branco);
+        border-radius: 8px;
+        padding: 2em;
+        margin-top: 2em;
+        grid-column: 3 / span 1;
+        /* Posiciona logo abaixo de "Quarta-feira" se grid permitir, ou no fim da grid */
+        height: fit-content;
+    }
+
+    .formulario_consulta h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5em;
+        color: var(--cor-texto-principal);
+        font-weight: 700;
+    }
+
+    .formulario_consulta__form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2em;
+    }
+
+    .formulario_consulta__campo {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    .formulario_consulta__campo label {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--cor-texto-principal);
+    }
+
+    .formulario_consulta__campo input,
+    .formulario_consulta__campo select,
+    .formulario_consulta__campo textarea {
+        padding: 0.8em;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.875rem;
+        color: var(--cor-texto-principal);
+        background-color: #f9f9f9;
+        transition: border-color 0.3s ease;
+    }
+
+    .formulario_consulta__campo input:focus,
+    .formulario_consulta__campo select:focus,
+    .formulario_consulta__campo textarea:focus {
+        outline: none;
+        border-color: var(--cor-fundo-botão-endereço);
+    }
+
+    .formulario_consulta__grupo-data-hora {
+        display: flex;
+        gap: 1em;
+    }
+
+    .formulario_consulta__grupo-data-hora .formulario_consulta__campo {
+        flex: 1;
+    }
+
+    .formulario_consulta__botao {
+        margin-top: 1em;
+        padding: 1em;
+        border-radius: 8px;
+        background-color: var(--cor-fundo-botão-endereço);
+        color: var(--fundo-branco);
+        border: none;
+        font-size: 0.875rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .formulario_consulta__botao:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
     }
 }
