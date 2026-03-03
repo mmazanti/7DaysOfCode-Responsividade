@@ -42,8 +42,18 @@ body {
     margin-bottom: 4px;
 }
 
-.rodapé-ações__item:first-child a {
+.rodapé-ações__item:first-child img {
+    filter: grayscale(100%) brightness(0.6);
+}
+
+.rodapé-ações__item a:active,
+.rodapé-ações__item.ativo a {
     color: #007bff;
+}
+
+.rodapé-ações__item a:active img,
+.rodapé-ações__item.ativo a img {
+    filter: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -53,24 +63,31 @@ body {
     }
 }
 
-@media  screen and (min-width: 1440px) {
+@media screen and (min-width: 1440px) {
     footer {
         position: fixed;
         top: 0;
         left: 0;
-        width: 250px; /* Largura da barra lateral */
-        height: 100vh; /* Altura total da tela */
+        width: 250px;
+        /* Largura da barra lateral */
+        height: 100vh;
+        /* Altura total da tela */
         background-color: var(--fundo-branco);
         padding: 40px 20px;
-        box-shadow: none; /* Remove a sombra superior do mobile */
-        border-right: none; /* Remove a borda direita do mobile */
+        box-shadow: none;
+        /* Remove a sombra superior do mobile */
+        border-right: none;
+        /* Remove a borda direita do mobile */
         display: flex;
     }
 
     .rodapé-ações {
-        flex-direction: column; /* Pilha verticalmente */
-        justify-content: flex-start; /* Alinha no topo */
-        gap: 20px; /* Espaço entre os itens */
+        flex-direction: column;
+        /* Pilha verticalmente */
+        justify-content: flex-start;
+        /* Alinha no topo */
+        gap: 20px;
+        /* Espaço entre os itens */
         padding: 0;
         border-radius: 0;
         background: transparent;
@@ -81,14 +98,16 @@ body {
     }
 
     .rodapé-ações__item a {
-        flex-direction: row; /* Ícone ao lado do texto */
+        flex-direction: row;
+        /* Ícone ao lado do texto */
         align-items: center;
         justify-content: flex-start;
         padding: 12px 16px;
-        border-radius: 8px; /* Bordas arredondadas */
+        border-radius: 8px;
+        /* Bordas arredondadas */
         font-size: 1.1rem;
         color: var(--cor-texto-principal);
-        gap: 15px; 
+        gap: 15px;
         padding: 10px 15px;
         transition: color 0.3s;
     }

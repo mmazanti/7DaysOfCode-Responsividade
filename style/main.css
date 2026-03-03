@@ -27,7 +27,7 @@
     height: 32px;
     border-radius: 50%;
     overflow: hidden;
-    
+
 }
 
 .card_consultas__perfil-foto img {
@@ -149,7 +149,7 @@
 
 .fab-main img {
     width: 24px;
-    height: 24px; 
+    height: 24px;
 }
 
 .fab-option {
@@ -188,6 +188,27 @@
     opacity: 1;
     pointer-events: auto;
     transform: translate(0);
+}
+
+@media screen and (max-width: 767px) {
+    .fab-container::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .fab-container.open::before {
+        opacity: 1;
+        pointer-events: auto;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -239,7 +260,7 @@
         margin-top: 2em;
         margin-bottom: 1em;
     }
-    
+
     footer {
         display: none;
     }
